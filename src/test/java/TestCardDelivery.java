@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
@@ -11,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestCardDelivery {
     @Test
     void test() {
+        Configuration.headless = true;
         LocalDate date = LocalDate.now().plusDays(3);
         String dateText = date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         open("http://localhost:9999");
